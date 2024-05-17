@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+
+.color-list {
+    &__colors {
+        gap: to-rem(10);
+        display: grid;
+        grid-template-columns: repeat(10, to-rem(25));
+    }
+
+    &__color {
+        @include colorBox;
+        height: to-rem(25);
+        width: to-rem(25);
+    }
+}

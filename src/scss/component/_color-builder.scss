@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.color-builder {
+    &__colors {
+        gap: to-rem(20);
+        display: grid;
+        grid-template-columns: repeat(3, to-rem(70));
+        
+        @media screen and (width>=to-rem(768)) {
+            grid-template-columns: repeat(5, to-rem(70));
+        }
+    }
+
+    &__color {
+        @include colorBox;
+
+        @each $name, $color in $primary-colors {
+            &--#{$name} {
+                background-color: $color;
+            }
+        }
+    }
+}

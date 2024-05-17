@@ -1,0 +1,10 @@
+@use "./functions" as *;
+
+@mixin colorBox {
+    background-color: #fff;
+    border: 1px solid var(--color-text);
+    border-radius: to-rem(7);
+    cursor: pointer;
+    height: to-rem(70);
+    width: to-rem(70);
+}

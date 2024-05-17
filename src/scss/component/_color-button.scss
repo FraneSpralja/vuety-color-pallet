@@ -1,0 +1,35 @@
+@use "../abstracts/index" as *;
+
+.color-button {
+    background-color: var(--color-text);
+    border: none;
+    border-radius: to-rem(12);
+    box-shadow: 1px 2px 5px var(--box-shadow-02);
+    color: var(--color-bg);
+    cursor: pointer;
+    display: inline-block;
+    font-size: to-rem(16);
+    margin-top: to-rem(16);
+    padding: to-rem(8) to-rem(12);
+    transition: transform .2s ease-in-out;
+
+    &:not(:last-child) {
+        margin-right: to-rem(20);
+    }
+
+    &:hover {
+        transform: translateY(to-rem(-4));
+        box-shadow: 1px 2px 10px var(--box-shadow-03);
+    }
+    
+    &:active {
+        box-shadow: 1px 2px 2px var(--box-shadow-01);
+        transform: translateY(2px);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .8;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,21 @@
+@use "../abstracts/index" as *;
+
+.footer {
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-text);
+    padding: to-rem(24) to-rem(42);
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+    }
+
+    &__end {
+        text-align: end;
+
+        a {
+            color: var(--color-text)
+        }
+    }
+}
