@@ -4,7 +4,7 @@
 
     const store = colorBuilderStore()
 
-    const theme_mode = ref("Ligth")
+    const theme_mode = ref("Light")
     const changeThemeMode = () => {
         store.changeThemeMode(theme_mode.value)
         if(theme_mode.value.includes("Light")) {
