@@ -230,6 +230,9 @@ ul {
   list-style: none;
   padding: 0;
 }
+.color-modal__item {
+  color: #151515;
+}
 
 .color-list__colors {
   gap: 0.625rem;
