@@ -23,6 +23,7 @@ html {
 #app {
     background-color: var(--color-bg);
     color: var(--color-text);
+    height: 100vh;
 }
 
 header,
@@ -36,6 +37,11 @@ main {
 
 header {
     padding-block-start: to-rem(42);
+}
+
+main {
+    background-color: var(--color-bg);
+    padding-bottom: to-rem(100);
 }
 
 section {

@@ -2,21 +2,42 @@
 
 .overlay {
     background-color: rgb(0 0 0 / .2);
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: 1;
 }
 
 .color-modal {
     background-color: #fff;
+    border-radius: to-rem(7);
     box-shadow: 0 0 to-rem(4) rgb(0 0 0 / .3);
     display: inline-block;
-    padding: to-rem(16);
+    padding: to-rem(22);
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: fit-content;
+
+
+    .btn-close {
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        font-size: to-rem(20);
+        height: to-rem(30);
+        width: to-rem(30);
+
+        position: absolute;
+        top: to-rem(-15);
+        right: to-rem(-15);
+    }
+
+    .btn-copy {
+        background-color: #353535;
+        color: #f3f3f3;
+    }
 
     &__list {
         list-style: none;
@@ -25,5 +46,32 @@
 
     &__item {
         color: #151515;
+        font-size: to-rem(20);
+    }
+
+    .mensaje_box {
+        border-radius: to-rem(4);
+        color: #252525;
+        margin-top: to-rem(12);
+        padding: to-rem(4) to-rem(8);
+        width: 100%;
+
+        &--success {
+            background-color: #9de19d;
+        }
+
+        &--error {
+            background-color: #e98787;
+        }
+    }
+
+    .mensaje-enter-active,
+    .mensaje-leave-active {
+    transition: opacity 0.5s ease-in-out
+    }
+
+    .mensaje-enter-from,
+    .mensaje-leave-to {
+    opacity: 0;
     }
 }

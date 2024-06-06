@@ -4,6 +4,9 @@
     background-color: var(--color-bg);
     border-top: 1px solid var(--color-text);
     padding: to-rem(24) to-rem(42);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     
     &__grid {
         display: grid;
