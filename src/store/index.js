@@ -1,47 +1,76 @@
 import { defineStore } from 'pinia';
+import { reactive, ref } from 'vue';
 
-export const colorBuilderStore = defineStore('color-builder', {
-    state: () => ({
-        primary_colors: [
+export const colorBuilderStore = defineStore('color-builder', () => {
+
+
+        const primary_colors = reactive([
             "red",
             "blue",
             "yellow",
             "black",
             "white"
-        ],
-        color_position: "first",
-        first_choose_color: "",
-        second_choose_color: "",
-        first_color_number: null,
-        second_color_number: null,
-        pallet: [],
-        monochrome: false,
-        theme: "dark"
-    }),
+        ])
+        const color_position =  ref("first")
+        const first_choose_color =  ref("")
+        const second_choose_color =  ref("")
+        const first_color_number =  ref(null)
+        const second_color_number =  ref(null)
+        const pallet = ref([])
+        const theme = ref("dark")
 
-    actions: {
-        colorPosition(position) { this.color_position = position },
-        chooseAColor(color) {
-            if(this.color_position.includes("first")) {
-                this.first_choose_color = ""
-                setTimeout(() => this.first_choose_color = color, 120)
+
+        const colorPosition = (position) => {color_position.value = position}
+
+        const chooseAColor = (color) => {
+            if(color_position.value.includes("first")) {
+                first_choose_color.value = ""
+                setTimeout(() => first_choose_color.value = color, 120)
             }
-            if(this.color_position.includes("second")) {
-                this.second_choose_color = ""
-                setTimeout(() => this.second_choose_color = color, 120)
+            if(color_position.value.includes("second")) {
+                second_choose_color.value = ""
+                setTimeout(() => second_choose_color.value = color, 120)
             }
-        },
-        selectColorNumber(number, place) {
-            if(place.includes("first")) this.first_color_number = number 
-            if(place.includes("second")) this.second_color_number = number
-        },
-        addColorToPallet(color) {
-            const colors = [ ...this.pallet ]
-            colors.push(color)
-            this.pallet = [ ...colors ]
-        },
-        changeThemeMode(mode) {
-            this.theme = mode.toLowerCase()
         }
-    }
+
+        const selectColorNumber = (number, place) => {
+            if(place.includes("first")) first_color_number.value = number 
+            if(place.includes("second")) second_color_number.value = number
+        }
+
+        const addColorToPallet = (color) => {
+            const colors = [ ...pallet.value ]
+            colors.push(color)
+            pallet.value = [ ...colors ]
+        }
+
+        const changeThemeMode = (mode) => theme.value = mode.toLowerCase()
+
+        const resetPallet = () => {
+            color_position.value =  "first"
+            first_choose_color.value =  ""
+            second_choose_color.value =  ""
+            first_color_number.value =  null
+            second_color_number.value =  null
+            pallet.value = []
+        }
+
+        return {
+            // state
+            first_choose_color,
+            second_choose_color,
+            first_color_number,
+            second_color_number,
+            primary_colors,
+            pallet,
+            theme,
+
+            //actions
+            chooseAColor,
+            colorPosition,
+            selectColorNumber,
+            addColorToPallet,
+            changeThemeMode,
+            resetPallet,
+        }
 })

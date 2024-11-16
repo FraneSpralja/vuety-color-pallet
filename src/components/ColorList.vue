@@ -8,9 +8,7 @@ const store = colorBuilderStore()
 
 const { pallet } = storeToRefs(store)
 const showColors = () => emits("show-colors")
-const reset = () => {
-    store.$reset()
-}
+
 </script>
 
 <template>
@@ -22,6 +20,6 @@ const reset = () => {
         </div>
         <p v-else> Aún no hay colores en tu paleta</p>
         <button class="color-button" @click="showColors" :disabled="pallet.length === 0">Copiar paleta</button>
-        <button class="color-button" @click="reset">Limpiar Paleta</button>
+        <button class="color-button" @click="store.resetPallet">Limpiar Paleta</button>
     </section>
 </template>
