@@ -22,7 +22,7 @@ setThemeOnApp()
   <div>
     <header>
       <ColorTheme />
-      <h1 class="your-color__title">Vuety Color Pallet</h1>
+      <h1 class="your-color__title">Vuety Color Pallete</h1>
     </header>
 
     <ColorMain />

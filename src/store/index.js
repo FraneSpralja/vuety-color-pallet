@@ -19,8 +19,7 @@ export const colorBuilderStore = defineStore('color-builder', () => {
         const pallet = ref([])
         const theme = ref("dark")
 
-
-        const colorPosition = (position) => {color_position.value = position}
+        const colorPosition = (position) => color_position.value = position
 
         const chooseAColor = (color) => {
             if(color_position.value.includes("first")) {
@@ -44,8 +43,6 @@ export const colorBuilderStore = defineStore('color-builder', () => {
             pallet.value = [ ...colors ]
         }
 
-        const changeThemeMode = (mode) => theme.value = mode.toLowerCase()
-
         const resetPallet = () => {
             color_position.value =  "first"
             first_choose_color.value =  ""
@@ -54,6 +51,9 @@ export const colorBuilderStore = defineStore('color-builder', () => {
             second_color_number.value =  null
             pallet.value = []
         }
+
+        const changeThemeMode = (mode) => theme.value = mode.toLowerCase()
+
 
         return {
             // state
@@ -70,7 +70,7 @@ export const colorBuilderStore = defineStore('color-builder', () => {
             colorPosition,
             selectColorNumber,
             addColorToPallet,
-            changeThemeMode,
             resetPallet,
+            changeThemeMode,
         }
 })
