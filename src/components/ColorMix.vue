@@ -39,6 +39,7 @@ watch(second_color_number, (newValue) => {
             <div class="color-mix__color" ref="color_box"></div>
         </div>
         <p class="color-mix__generate">{{ computed_color }}</p>
-        <button class="color-button" @click="store.addColorToPallet(computed_color)">Add color to pallet</button>
+        <button class="color-button color-button--add"
+            @click="store.addColorToPallet(computed_color)"><span></span></button>
     </section>
 </template>

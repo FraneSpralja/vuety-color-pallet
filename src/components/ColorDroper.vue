@@ -15,7 +15,12 @@ const chooseColor = (position) => {
     store.colorPosition(position)
 }
 
-const defineValue = (e, place) => store.selectColorNumber(e.target.value, place)
+const defineValue = (e, place) => {
+    if (e?.target?.value)
+        store.selectColorNumber(e?.target?.value, place)
+    else
+        store.selectColorNumber(e, place)
+}
 
 watch(value_first, (newValue) => defineValue(newValue, "first"))
 watch(value_second, (newValue) => defineValue(newValue, "second"))

@@ -19,7 +19,8 @@ const showColors = () => emits("show-colors")
             </div>
         </div>
         <p v-else> Aún no hay colores en tu paleta</p>
-        <button class="color-button" @click="showColors" :disabled="pallet.length === 0">Copiar paleta</button>
-        <button class="color-button" @click="store.resetPallet">Limpiar Paleta</button>
+        <button class="color-button color-button--copy" @click="showColors"
+            :disabled="pallet.length === 0"><span></span></button>
+        <button class="color-button color-button--trash" @click="store.resetPallet"><span></span></button>
     </section>
 </template>
