@@ -1,6 +1,6 @@
 <script setup>
 
-import ColorMain from './layout/ColorMain.vue';
+import ColorNav from './layout/ColorNav.vue';
 import ColorFooter from './layout/ColorFooter.vue';
 import ColorTheme from './components/ColorTheme.vue';
 import { colorBuilderStore } from './store/'
@@ -25,7 +25,9 @@ setThemeOnApp()
       <h1 class="your-color__title">Vuety Color Pallete</h1>
     </header>
 
-    <ColorMain />
+    <ColorNav />
+
+    <RouterView />
 
     <ColorFooter />
   </div>

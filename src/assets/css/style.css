@@ -349,6 +349,12 @@ ul {
   mask-repeat: no-repeat;
   mask-size: contain;
 }
+.color-button--save span {
+  mask-image: url("../../assets/icons/save_icon.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
 
 .color-theme {
   text-align: center;
@@ -390,6 +396,25 @@ ul {
 }
 .color-theme .theme-button.theme-light::after {
   left: calc(100% - 45px);
+}
+
+.color-nav {
+  align-items: center;
+  border-bottom: 1px solid var(--color-text);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  margin-inline: auto;
+  padding-bottom: 0.75rem;
+  padding-inline: 1.5rem;
+  width: fit-content;
+}
+.color-nav__link {
+  color: var(--color-text);
+}
+.color-nav__link.router-link-exact-active {
+  color: gold;
 }
 
 .footer {

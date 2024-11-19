@@ -10,7 +10,9 @@
     "watch:sass": "sass --watch src/scss/main.scss:src/assets/css/style.css"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "pinia": "^2.2.6",
+    "vue": "^3.4.21",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

@@ -22,5 +22,6 @@ const showColors = () => emits("show-colors")
         <button class="color-button color-button--copy" @click="showColors"
             :disabled="pallet.length === 0"><span></span></button>
         <button class="color-button color-button--trash" @click="store.resetPallet"><span></span></button>
+        <button class="color-button color-button--save" @click="store.resetPallet"><span></span></button>
     </section>
 </template>
