@@ -5,10 +5,18 @@
   font-style: normal;
 }
 
-h1 {
-  font-size: 3.875rem;
+h1,
+h2 {
   font-weight: 400;
   text-align: center;
+}
+
+h1 {
+  font-size: 3.875rem;
+}
+
+h2 {
+  font-size: 3rem;
 }
 
 * {
@@ -257,6 +265,16 @@ ul {
   color: #151515;
   font-size: 1.25rem;
 }
+.color-modal__input {
+  border: transparent;
+  border-bottom: 1px solid var(--color-bg);
+  color: color-mix(in srgb, var(--color-text), var(--color-bg) 70%);
+  font-family: "Radio Canada Big", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+}
 .color-modal .mensaje_box {
   border-radius: 0.25rem;
   color: #252525;
@@ -330,6 +348,12 @@ ul {
   display: inline-block;
   height: 1.5625rem;
   width: 1.5625rem;
+}
+.color-button.modal-button {
+  background-color: var(--color-bg);
+}
+.color-button.modal-button span {
+  background-color: var(--color-text);
 }
 .color-button--add span {
   mask-image: url("../../assets/icons/add_icon.svg");

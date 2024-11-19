@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia'
-import { colorBuilderStore } from '../store/'
+import { colorBuilderStore } from '../store/colorBuilderStore'
 import { useGenerateColor } from '../composables/use-generate-color';
 
 

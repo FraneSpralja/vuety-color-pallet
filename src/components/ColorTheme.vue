@@ -1,5 +1,5 @@
 <script setup>
-    import { colorBuilderStore } from '../store';
+    import { colorBuilderStore } from '../store/colorBuilderStore'
     import { ref } from 'vue';
 
     const store = colorBuilderStore()

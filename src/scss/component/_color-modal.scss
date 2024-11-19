@@ -49,6 +49,17 @@
         font-size: to-rem(20);
     }
 
+    &__input {
+        border: transparent;
+        border-bottom: 1px solid var(--color-bg);
+        color: color-mix(in srgb, var(--color-text), var(--color-bg) 70%);
+        font-family: $font-family;
+        font-size: to-rem(16);
+        margin-bottom: to-rem(12);
+        padding: to-rem(4) to-rem(8);
+        width: 100%;
+    }
+
     .mensaje_box {
         border-radius: to-rem(4);
         color: #252525;

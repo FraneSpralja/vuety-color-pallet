@@ -48,6 +48,13 @@ $btn-icons: (
         width: to-rem(25);
     }
 
+    &.modal-button {
+        background-color: var(--color-bg);
+        span{
+            background-color: var(--color-text);
+        }
+    }
+
     @each $icon in $btn-icons {
         &--#{$icon} {
 

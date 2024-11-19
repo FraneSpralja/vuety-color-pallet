@@ -3,5 +3,5 @@
 </script>
 
 <template>
-    <h1>My Palletes</h1>
+    <h2>Paletas Guardadas</h2>
 </template>

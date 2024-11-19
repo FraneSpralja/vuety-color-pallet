@@ -3,7 +3,7 @@
 import ColorNav from './layout/ColorNav.vue';
 import ColorFooter from './layout/ColorFooter.vue';
 import ColorTheme from './components/ColorTheme.vue';
-import { colorBuilderStore } from './store/'
+import { colorBuilderStore } from './store/colorBuilderStore'
 import { storeToRefs } from 'pinia'
 import { watch } from 'vue';
 

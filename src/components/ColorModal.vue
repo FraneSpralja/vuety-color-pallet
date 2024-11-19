@@ -1,15 +1,23 @@
 <script setup>
 import { ref } from 'vue';
 import { storeToRefs } from 'pinia'
-import { colorBuilderStore } from '../store/'
+import { colorBuilderStore } from '../store/colorBuilderStore'
 import { useCopyPaleta } from '../composables/use-copy-pallete'
+import { colorSaveStore } from '../store/colorSaveStore';
 
 const emits = defineEmits(["close-modal"])
 
-const store = colorBuilderStore()
-const { pallet } = storeToRefs(store)
+defineProps({
+    copy_modal: Boolean
+})
+
+const { pallet } = storeToRefs(colorBuilderStore())
+
+const { savePallete } = colorSaveStore()
 
 const { copy_lista, mensaje, mensaje_box, copyPaleta } = useCopyPaleta()
+
+const palleteName = ref("Nombre de la paleta")
 
 const closeModal = () => emits("close-modal")
 
@@ -18,12 +26,16 @@ const closeModal = () => emits("close-modal")
 <template>
     <div class="color-modal">
         <button class="btn-close" @click="closeModal">X</button>
+        <input v-if="!copy_modal" class="color-modal__input" type="text" v-model="palleteName">
         <ul class="color-modal__list" ref="copy_lista">
             <li v-for="(color, index) in pallet" :key="color" class="color-modal__item">
                 {{ `--color-${index + 1}: ${color}` }}
             </li>
         </ul>
-        <button class="btn-copy color-button" @click="copyPaleta">Copiar paleta</button>
+        <button v-if="copy_modal" class="color-button modal-button color-button--copy"
+            @click="copyPaleta"><span></span></button>
+        <button v-else class="color-button modal-button color-button--save"
+            @click="savePallete(pallet)"><span></span></button>
         <Transition name="mensaje">
             <p v-if="mensaje" class="mensaje_box" :class="'mensaje_box--' + mensaje_box.clase">
                 {{ mensaje_box.texto }}

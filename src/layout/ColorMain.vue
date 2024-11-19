@@ -7,8 +7,12 @@ import ColorModal from '../components/ColorModal.vue';
 import { ref } from 'vue';
 
 const show_modal = ref(false)
+const copy_modal = ref(true)
 
-const showModal = () => show_modal.value = !show_modal.value
+const showModal = (e) => {
+    copy_modal.value = e === 'copy' ? true : false
+    show_modal.value = !show_modal.value
+}
 
 </script>
 
@@ -21,5 +25,5 @@ const showModal = () => show_modal.value = !show_modal.value
     </main>
 
     <div v-if="show_modal" class="overlay" @click="showModal"></div>
-    <ColorModal v-if="show_modal" @close-modal="showModal" />
+    <ColorModal v-if="show_modal" :copy_modal @close-modal="showModal" />
 </template>

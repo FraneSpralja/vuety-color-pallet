@@ -1,5 +1,5 @@
 <script setup>
-import { colorBuilderStore } from '../store/'
+import { colorBuilderStore } from '../store/colorBuilderStore'
 import { storeToRefs } from 'pinia'
 import { ref, watch } from 'vue';
 
