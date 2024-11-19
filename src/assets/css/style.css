@@ -97,7 +97,7 @@ ul {
   }
 }
 .color-builder__color {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid var(--color-text);
   border-radius: 0.4375rem;
   cursor: pointer;
@@ -132,7 +132,7 @@ ul {
   grid-column: 1/4;
 }
 .color-choose__color {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid var(--color-text);
   border-radius: 0.4375rem;
   cursor: pointer;
@@ -208,12 +208,12 @@ ul {
   grid-template-columns: repeat(3, 4.375rem);
 }
 .color-mix__color {
-  --color-first: #fff;
-  --color-second: #fff;
+  --color-first: $white;
+  --color-second: $white;
   --number-first: 100%;
   --number-second: 0%;
   --color-mix: color-mix(in srgb, var(--color-first) var(--number-first), var(--color-second) var(--number-second));
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid var(--color-text);
   border-radius: 0.4375rem;
   cursor: pointer;
@@ -230,7 +230,7 @@ ul {
 }
 
 .color-modal {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 0.4375rem;
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
   display: inline-block;
@@ -262,7 +262,7 @@ ul {
   padding: 0;
 }
 .color-modal__item {
-  color: #151515;
+  color: #252525;
   font-size: 1.25rem;
 }
 .color-modal__input {
@@ -303,7 +303,7 @@ ul {
   grid-template-columns: repeat(10, 1.5625rem);
 }
 .color-list__color {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid var(--color-text);
   border-radius: 0.4375rem;
   cursor: pointer;
@@ -315,7 +315,6 @@ ul {
 
 .color-button {
   align-items: center;
-  background-color: var(--color-text);
   border: none;
   border-radius: 0.75rem;
   box-shadow: 1px 2px 5px var(--box-shadow-02);
@@ -355,11 +354,17 @@ ul {
 .color-button.modal-button span {
   background-color: var(--color-text);
 }
+.color-button--add {
+  background-color: var(--color-text);
+}
 .color-button--add span {
   mask-image: url("../../assets/icons/add_icon.svg");
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
+}
+.color-button--copy {
+  background-color: var(--color-text);
 }
 .color-button--copy span {
   mask-image: url("../../assets/icons/copy_icon.svg");
@@ -367,11 +372,17 @@ ul {
   mask-repeat: no-repeat;
   mask-size: contain;
 }
+.color-button--trash {
+  background-color: #e98787;
+}
 .color-button--trash span {
   mask-image: url("../../assets/icons/trash_icon.svg");
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
+}
+.color-button--save {
+  background-color: var(--color-text);
 }
 .color-button--save span {
   mask-image: url("../../assets/icons/save_icon.svg");

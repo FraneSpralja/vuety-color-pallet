@@ -9,7 +9,6 @@ $btn-icons: (
 
 .color-button {
     align-items: center;
-    background-color: var(--color-text);
     border: none;
     border-radius: to-rem(12);
     box-shadow: 1px 2px 5px var(--box-shadow-02);
@@ -57,8 +56,16 @@ $btn-icons: (
 
     @each $icon in $btn-icons {
         &--#{$icon} {
+            @if $icon == 'trash' {
+                background-color: $color-error;
+            }
+
+            @else {
+                background-color: var(--color-text);
+            }
 
             span {
+
                 mask-image: url('../../assets/icons/'+$icon+'_icon.svg');
                 mask-position: center;
                 mask-repeat: no-repeat;

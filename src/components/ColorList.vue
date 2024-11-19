@@ -22,9 +22,9 @@ const showColors = (typeShow) => emits("show-colors", typeShow)
         <p v-else> Aún no hay colores en tu paleta</p>
         <button class="color-button color-button--copy" @click="showColors('copy')"
             :disabled="pallet.length === 0"><span></span></button>
-        <button class="color-button color-button--trash" @click="resetPallet"
-            :disabled="pallet.length === 0"><span></span></button>
         <button class="color-button color-button--save" @click="showColors('save')"
+            :disabled="pallet.length === 0"><span></span></button>
+        <button class="color-button color-button--trash" @click="resetPallet"
             :disabled="pallet.length === 0"><span></span></button>
     </section>
 </template>

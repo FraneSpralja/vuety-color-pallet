@@ -1,16 +1,16 @@
 @use "../abstracts/" as *;
 
 .overlay {
-    background-color: rgb(0 0 0 / .2);
+    background-color: rgba($black, .2);
     position: fixed;
     inset: 0;
     z-index: 1;
 }
 
 .color-modal {
-    background-color: #fff;
+    background-color: $white;
     border-radius: to-rem(7);
-    box-shadow: 0 0 to-rem(4) rgb(0 0 0 / .3);
+    box-shadow: 0 0 to-rem(4) rgba($black, .3);
     display: inline-block;
     padding: to-rem(22);
     z-index: 2;
@@ -35,8 +35,8 @@
     }
 
     .btn-copy {
-        background-color: #353535;
-        color: #f3f3f3;
+        background-color: $dark-gray-03;
+        color: $gray-ligth;
     }
 
     &__list {
@@ -45,7 +45,7 @@
     }
 
     &__item {
-        color: #151515;
+        color: $dark-gray-02;
         font-size: to-rem(20);
     }
 
@@ -62,17 +62,17 @@
 
     .mensaje_box {
         border-radius: to-rem(4);
-        color: #252525;
+        color: $dark-gray-02;
         margin-top: to-rem(12);
         padding: to-rem(4) to-rem(8);
         width: 100%;
 
         &--success {
-            background-color: #9de19d;
+            background-color: $color-success;
         }
 
         &--error {
-            background-color: #e98787;
+            background-color: $color-error;
         }
     }
 

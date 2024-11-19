@@ -7,7 +7,7 @@
         background-color: var(--color-text);
         border: none;
         border-radius: to-rem(25);
-        box-shadow: inset 0 0 0 2px gold;
+        box-shadow: inset 0 0 0 2px $gold;
         color: var(--color-bg);
         display: inline-block;
         font-size: to-rem(16);
