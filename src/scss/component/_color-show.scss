@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+.color-show {
+
+    padding: to-rem(16);
+    
+    &__box {
+        column-gap: to-rem(5);
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: to-rem(12);
+    }
+
+    &__name {
+        flex-basis: 100%;
+        margin-bottom: to-rem(5); 
+    }
+
+    &__color {
+        @include colorBox;
+        height: to-rem(25);
+        width: to-rem(25);
+    }
+}

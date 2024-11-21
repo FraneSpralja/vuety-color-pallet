@@ -10,6 +10,8 @@ export const useGenerateColor = () => {
         const color = window.getComputedStyle(color_box.value).backgroundColor
         if (color === "rgba(0, 0, 0, 0)") {
             computed_color.value = color
+
+            console.log(computed_color.value)
         } else {
             let numbers = color.replace("color(srgb ", "").replace(")", "").replace("/ ", "").split(" ")
             const cleanNumbers = [];

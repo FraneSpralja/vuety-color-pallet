@@ -44,11 +44,6 @@ export const colorBuilderStore = defineStore('color-builder', () => {
         }
 
         const resetPallet = () => {
-            color_position.value =  "first"
-            first_choose_color.value =  ""
-            second_choose_color.value =  ""
-            first_color_number.value =  null
-            second_color_number.value =  null
             pallet.value = []
         }
 

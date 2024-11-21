@@ -4,6 +4,7 @@ import ColorNav from './layout/ColorNav.vue';
 import ColorFooter from './layout/ColorFooter.vue';
 import ColorTheme from './components/ColorTheme.vue';
 import { colorBuilderStore } from './store/colorBuilderStore'
+import { colorSaveStore } from './store/colorSaveStore';
 import { storeToRefs } from 'pinia'
 import { watch } from 'vue';
 
@@ -15,11 +16,15 @@ watch(theme, (newValue) => {
   if (newValue) setThemeOnApp()
 })
 
+const { getAllPalletes } = colorSaveStore()
+
+getAllPalletes()
+
 setThemeOnApp()
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <header>
       <ColorTheme />
       <h1 class="your-color__title">Vuety Color Pallete</h1>

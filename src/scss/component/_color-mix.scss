@@ -8,8 +8,8 @@
     }
 
     &__color {
-        --color-first: $white;
-        --color-second: $white;
+        --color-first: #fff;
+        --color-second: #fff;
         --number-first: 100%;
         --number-second: 0%;
         --color-mix: color-mix(in srgb, var(--color-first) var(--number-first), var(--color-second) var(--number-second));

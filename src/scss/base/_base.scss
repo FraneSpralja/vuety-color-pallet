@@ -41,7 +41,6 @@ header {
 
 main {
     background-color: var(--color-bg);
-    padding-bottom: to-rem(100);
 }
 
 section {
@@ -60,4 +59,9 @@ a:link {
 
 ul {
     list-style: none;
+}
+
+.container {
+    background-color: var(--color-bg);
+    overflow: auto;
 }

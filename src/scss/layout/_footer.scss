@@ -3,9 +3,8 @@
 .footer {
     background-color: var(--color-bg);
     border-top: 1px solid var(--color-text);
+    margin-top: to-rem(40);
     padding: to-rem(24) to-rem(42);
-    position: fixed;
-    bottom: 0;
     width: 100%;
     
     &__grid {

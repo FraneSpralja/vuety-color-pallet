@@ -21,6 +21,19 @@ const palleteName = ref("Nombre de la paleta")
 
 const closeModal = () => emits("close-modal")
 
+const saveColors = (pallete) => {
+
+    savePallete(pallete)
+    mensaje.value = true
+    mensaje_box.clase = "success"
+    mensaje_box.texto = "La paleta se ha guardado correctamente"
+
+    setTimeout(() => {
+        mensaje.value = false
+        closeModal()
+    }, 4000)
+}
+
 </script>
 
 <template>
@@ -35,7 +48,7 @@ const closeModal = () => emits("close-modal")
         <button v-if="copy_modal" class="color-button modal-button color-button--copy"
             @click="copyPaleta"><span></span></button>
         <button v-else class="color-button modal-button color-button--save"
-            @click="savePallete(pallet)"><span></span></button>
+            @click="saveColors({ name: palleteName, colors: pallet })"><span></span></button>
         <Transition name="mensaje">
             <p v-if="mensaje" class="mensaje_box" :class="'mensaje_box--' + mensaje_box.clase">
                 {{ mensaje_box.texto }}

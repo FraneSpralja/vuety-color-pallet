@@ -4,7 +4,19 @@
     &__colors {
         gap: to-rem(10);
         display: grid;
-        grid-template-columns: repeat(10, to-rem(25));
+        grid-template-columns: repeat(5, max-content);
+    }
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        small {
+            flex: 0 0 100%;
+            font-size: to-rem(10);
+            text-align: center;
+        }
     }
 
     &__color {
