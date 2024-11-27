@@ -4,7 +4,15 @@
     &__colors {
         gap: to-rem(10);
         display: grid;
-        grid-template-columns: repeat(5, max-content);
+        grid-template-columns: repeat(3, max-content);
+        
+        @media (width >= to-rem(768)) {
+            grid-template-columns: repeat(5, max-content);
+        }
+
+        @media (width >= to-rem(1024)) {
+            grid-template-columns: repeat(7, max-content);
+        }
     }
 
     &__box {

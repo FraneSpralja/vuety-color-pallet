@@ -1,17 +1,14 @@
 <script setup>
 import { ref } from 'vue';
-import { storeToRefs } from 'pinia'
-import { colorBuilderStore } from '../store/colorBuilderStore'
 import { useCopyPaleta } from '../composables/use-copy-pallete'
 import { colorSaveStore } from '../store/colorSaveStore';
 
 const emits = defineEmits(["close-modal"])
 
 defineProps({
-    copy_modal: Boolean
+    copy_modal: Boolean,
+    pallet: Array,
 })
-
-const { pallet } = storeToRefs(colorBuilderStore())
 
 const { savePallete } = colorSaveStore()
 

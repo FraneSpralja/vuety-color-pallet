@@ -6,8 +6,10 @@ export const colorSaveStore = defineStore('color-save', () => {
     const allPalletes = ref([])
 
     const savePallete = (pallete) => {
-        const { name, colors } = pallete
+        const { name } = pallete
         const palletes = [ ...allPalletes.value ]
+
+        pallete.id = Date.now()
 
         if(name === "Nombre de la paleta") {
             pallete.name = `pallete-${palletes.length + 1}`
@@ -22,7 +24,21 @@ export const colorSaveStore = defineStore('color-save', () => {
     const getAllPalletes = () => {
         const palletes = localStorage.getItem('palletes')
 
+        if(!palletes) {
+            return
+        }
+
         allPalletes.value =  [  ...JSON.parse(palletes) ]
+    }
+
+    const removePallete = (id) => {
+        const palletes = [ ...allPalletes.value ]
+
+        const cleanPalletes = palletes.filter(item => item.id !== id)
+
+        allPalletes.value = [ ...cleanPalletes ]
+
+        localStorage.setItem('palletes', JSON.stringify(allPalletes.value))
     }
 
     return {
@@ -32,5 +48,6 @@ export const colorSaveStore = defineStore('color-save', () => {
         //Actions
         getAllPalletes,
         savePallete,
+        removePallete,
     }
 })

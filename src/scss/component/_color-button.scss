@@ -54,6 +54,23 @@ $btn-icons: (
         }
     }
 
+    &.show-button {
+        background-color: transparent;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        
+        span {
+            background-color: var(--color-text);
+        }
+
+        &.color-button--trash {
+            span {
+                background-color: $color-error;
+            }
+        }
+    }
+
     @each $icon in $btn-icons {
         &--#{$icon} {
             @if $icon == 'trash' {

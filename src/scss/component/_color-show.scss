@@ -4,21 +4,58 @@
 
     padding: to-rem(16);
     
-    &__box {
+    &__show {
+        border-bottom: 1px solid var(--color-text);
         column-gap: to-rem(5);
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
         margin-bottom: to-rem(12);
+        padding-bottom: to-rem(8);
     }
 
     &__name {
-        flex-basis: 100%;
+        grid-column: 1 / 6;
         margin-bottom: to-rem(5); 
+    }
+
+    &__content {
+        display: grid;
+        flex-wrap: wrap;
+        grid-column: 1 / 5;
+        grid-template-columns: repeat(3, 1fr);
+        gap: to-rem(5);
+
+        @media(width>=to-rem(768)) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media(width>=to-rem(996)) {
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+    }
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+
+        small {
+            flex-basis: 100%;
+            font-size: to-rem(10);
+            text-align: center;
+        }
     }
 
     &__color {
         @include colorBox;
         height: to-rem(25);
         width: to-rem(25);
+        margin-inline: auto;
+    }
+
+    &__actions {
+        display: flex;
+        grid-column: 5 / 6;
+        margin-left: to-rem(12);
     }
 }

@@ -1,7 +1,6 @@
 <script setup>
 import { colorBuilderStore } from '../store/colorBuilderStore'
 import { storeToRefs } from 'pinia'
-import { colorSaveStore } from '../store/colorSaveStore';
 
 const emits = defineEmits(["show-colors"])
 

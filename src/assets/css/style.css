@@ -244,7 +244,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: fit-content;
+  width: min(92vw, 50rem);
 }
 .color-modal .btn-close {
   border-radius: 50%;
@@ -304,7 +304,17 @@ ul {
 .color-list__colors {
   gap: 0.625rem;
   display: grid;
-  grid-template-columns: repeat(5, max-content);
+  grid-template-columns: repeat(3, max-content);
+}
+@media (width >= 48rem) {
+  .color-list__colors {
+    grid-template-columns: repeat(5, max-content);
+  }
+}
+@media (width >= 64rem) {
+  .color-list__colors {
+    grid-template-columns: repeat(7, max-content);
+  }
 }
 .color-list__box {
   display: flex;
@@ -367,6 +377,18 @@ ul {
 }
 .color-button.modal-button span {
   background-color: var(--color-text);
+}
+.color-button.show-button {
+  background-color: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.color-button.show-button span {
+  background-color: var(--color-text);
+}
+.color-button.show-button.color-button--trash span {
+  background-color: #e98787;
 }
 .color-button--add {
   background-color: var(--color-text);
@@ -450,15 +472,43 @@ ul {
 .color-show {
   padding: 1rem;
 }
-.color-show__box {
+.color-show__show {
+  border-bottom: 1px solid var(--color-text);
   column-gap: 0.3125rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
 }
 .color-show__name {
-  flex-basis: 100%;
+  grid-column: 1/6;
   margin-bottom: 0.3125rem;
+}
+.color-show__content {
+  display: grid;
+  flex-wrap: wrap;
+  grid-column: 1/5;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3125rem;
+}
+@media (width >= 48rem) {
+  .color-show__content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (width >= 62.25rem) {
+  .color-show__content {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.color-show__box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.color-show__box small {
+  flex-basis: 100%;
+  font-size: 0.625rem;
+  text-align: center;
 }
 .color-show__color {
   background-color: #ffffff;
@@ -469,6 +519,12 @@ ul {
   width: 4.375rem;
   height: 1.5625rem;
   width: 1.5625rem;
+  margin-inline: auto;
+}
+.color-show__actions {
+  display: flex;
+  grid-column: 5/6;
+  margin-left: 0.75rem;
 }
 
 .color-nav {
